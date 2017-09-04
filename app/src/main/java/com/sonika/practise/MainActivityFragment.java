@@ -107,7 +107,6 @@ public class MainActivityFragment extends Fragment {
                 mprogressDialog.dismiss();
                 if (flag == 1) {
                     Toast.makeText(getContext(), "Server/Network issue", Toast.LENGTH_SHORT).show();
-
                 } else if (flag == 2) {
                     Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
                     bestRecyclerView = (RecyclerView) getView().findViewById(R.id.product_list);
