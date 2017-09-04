@@ -35,11 +35,11 @@ public class MainActivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
-        perform(v);
+        perform();
         return v;
     }
 
-    public void perform(View v)
+    public void perform()
     {
         new ProductAsyncTask().execute();
     }
