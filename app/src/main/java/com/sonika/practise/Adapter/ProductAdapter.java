@@ -3,9 +3,12 @@ package com.sonika.practise.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.sonika.practise.DetailsActivity;
 import com.sonika.practise.R;
 
 import com.sonika.practise.Pojo.ProductObject;
@@ -41,22 +44,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductHolder> {
 
     @Override
     public void onBindViewHolder(ProductHolder holder, final int position) {
-        ProductObject one = productList.get(position);
+
         holder.productName.setText("Product Name : " + productList.get(position).getName());
         holder.productPrice.setText("Product Price : " + productList.get(position).getPrice());
-
         Picasso.with(context).load(productList.get(position).getImage()).into(holder.productImage);
 
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ProductObject one = productList.get(position);
-//                Intent i = new Intent(context, DetailsActivity.class);
-//                i.putExtra("hello", one);
-//                context.startActivity(i);
-//            }
-//        });
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProductObject one = productList.get(position);
+                Intent intent = new Intent(context, DetailsActivity.class);
+                intent.putExtra("yellow", one);
+                context.startActivity(intent);
+                Log.e("donkey", "monkey");
+            }
+        });
     }
 
     @Override
